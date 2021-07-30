@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:layout_height= "match_parent"
+    android:layout_width= "match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <TextView
+        android:id="@+id/text_view_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margintext"
+        android:textColor="@color/blue"
+        android:textSize="@dimen/title1"
+        android:text="@string/message"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titles"
+            android:textSize="@dimen/title2"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/margin"
+                android:layout_height="@dimen/margin"
+                android:layout_marginTop="@android:dimen/app_icon_size"
+                android:src="@drawable/fall" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margintext"
+                    android:text="Legend Of The Fall"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Release Date:  Apr 16, 2012"
+                    android:textColor="@color/black"
+                />
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickButton"
+                    android:background="@color/blue"
+                    android:textColor="@color/black"
+                    android:text="@string/filmInfo"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/margin"
+                android:layout_height="@dimen/margin"
+                android:layout_marginTop="@android:dimen/app_icon_size"
+                android:src="@drawable/ifonly" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margintext"
+                    android:text="If Only"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Release date: January 23, 2004"
+                    android:textColor="@color/black"
+                    />
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickButton"
+                    android:background="@color/blue"
+                    android:textColor="@color/black"
+                    android:text="@string/filmInfo"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/button"
+        android:textColor="@color/black"
+        android:background="@color/blue"
+        />
+</RelativeLayout >
