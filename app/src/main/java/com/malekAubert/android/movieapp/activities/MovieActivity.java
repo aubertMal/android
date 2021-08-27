@@ -1,6 +1,7 @@
-package com.malekAubert.android.movieapp;
+package com.malekAubert.android.movieapp.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -8,6 +9,10 @@ import android.os.Bundle;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.malekAubert.android.movieapp.R;
+import com.malekAubert.android.movieapp.activities.MainActivity;
+import com.malekAubert.android.movieapp.models.Movie;
+import com.malekAubert.android.movieapp.models.Parser;
 import com.squareup.picasso.Picasso;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,12 +56,14 @@ public class MovieActivity extends AppCompatActivity {
     progressBar = findViewById(R.id.progressBar);
     linearLayout = findViewById(R.id.pageprincipale);
 
+    Intent intent = new Intent(this,SearchActivity.class);
+
     FloatingActionButton fab = findViewById(R.id.fab);
     fab.setOnClickListener(
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+            Snackbar.make(view, "start Search", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .show();
           }
@@ -123,10 +130,11 @@ public class MovieActivity extends AppCompatActivity {
                             }catch(InterruptedException e){
                               e.printStackTrace();
                             }
+                            Parser parser = new Parser();
                             progressBar.setVisibility(View.GONE);
                             linearLayout.setVisibility(View.VISIBLE);
                             // Code exécuté dans le Thread principale
-                            updateUi(setMovieFromJSON(stringJson));
+                            updateUi(parser.setMovieFromJSON(stringJson));
                           }
                         });
                     Log.d("TAG", stringJson);
@@ -142,20 +150,5 @@ public class MovieActivity extends AppCompatActivity {
   protected void onDestroy() {
     super.onDestroy();
     Log.d("Destroy", "MovieActivity : onDestroy()");
-  }
-
-  public Movie setMovieFromJSON(String movieJson) {
-    Movie movie = new Movie("", "", "", "", "");
-    try {
-      JSONObject jsonObject = new JSONObject(movieJson);
-      movie.setTitle(jsonObject.getString("Title"));
-      movie.setReleaseDate(jsonObject.getString("Released"));
-      movie.setDirector(jsonObject.getString("Director"));
-      movie.setDescription(jsonObject.getString("Plot"));
-      movie.setUrlPoster(jsonObject.getString("Poster"));
-    } catch (JSONException e) {
-      e.printStackTrace();
-    }
-    return movie;
   }
 }

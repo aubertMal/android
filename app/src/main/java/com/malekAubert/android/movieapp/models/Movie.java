@@ -1,4 +1,4 @@
-package com.malekAubert.android.movieapp;
+package com.malekAubert.android.movieapp.models;
 
 public class Movie {
     private String title;

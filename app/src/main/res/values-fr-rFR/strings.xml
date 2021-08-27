@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Movie App</string>
     <string name="message">Bienvenue Malek!!</string>
-    <string name="titles">Films Populaires</string>
+    <string name="titles">Taper le nom du film</string>
     <string name="button">Rechercher</string>
     <string name="filmInfo">Infos</string>
     <string name="action_settings">Parametres</string>
